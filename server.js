@@ -23,6 +23,8 @@ io.on('connection', socket => {
     const user = userJoin(socket.id, username, room);
 
     socket.join(user.room);
+   
+    
 
     socket.emit('message', formatMessage(botName, ` Bem vindo ao chat ${user.username}`));
 
@@ -30,7 +32,7 @@ io.on('connection', socket => {
       .to(user.room)
       .emit(
         'message',
-        formatMessage(botName, `${user.username} Foi de Base`)
+        formatMessage(botName, `${user.username} Entrou com força bruta ainn`)
       );
 
     io.to(user.room).emit('roomUsers', {
@@ -51,7 +53,7 @@ io.on('connection', socket => {
     if (user) {
       io.to(user.room).emit(
         'message',
-        formatMessage(botName, `${user.username} Entrou no chat`)
+        formatMessage(botName, `${user.username} Foi zuckado!!`)
       );
 
       io.to(user.room).emit('roomUsers', {
