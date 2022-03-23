@@ -32,7 +32,7 @@ io.on('connection', socket => {
       .to(user.room)
       .emit(
         'message',
-        formatMessage(botName, `${user.username} Entrou com força bruta ainn`)
+        formatMessage(botName, `${user.username} Entrou no chat`)
       );
 
     io.to(user.room).emit('roomUsers', {
